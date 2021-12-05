@@ -1,13 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
-import React, { useCallback, useEffect, useState } from "react";
-import { Keyboard, Modal } from "react-native";
+import { isAfter } from "date-fns";
+import React, { useCallback, useState } from "react";
+import { Keyboard } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import { useTheme } from "styled-components";
 import { Input } from "../../components/Form/Input";
 import { ServiceCard } from "../../components/ServiceCard";
-import { useService } from "../../hooks/serviceContext";
-import { isAfter } from "date-fns";
 import {
   Container,
   Header,
@@ -19,7 +17,6 @@ import {
   ServicesList,
   Title,
 } from "./styles";
-import { Register } from "../Register";
 
 interface Client {
   id: string;
