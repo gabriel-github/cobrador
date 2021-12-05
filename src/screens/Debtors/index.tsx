@@ -1,7 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import React, { useCallback, useState } from "react";
-import { Keyboard, Modal, TouchableWithoutFeedback } from "react-native";
+import { Keyboard } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { useTheme } from "styled-components";
 import { Input } from "../../components/Form/Input";
 import { ServiceCard } from "../../components/ServiceCard";
@@ -84,7 +85,10 @@ export function Debtors() {
   );
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback
+      onPress={Keyboard.dismiss}
+      style={{ height: "100%" }}
+    >
       <Container>
         <Header>
           <SearchWrapper>
